@@ -6,8 +6,14 @@ env:
 
 jobs:
   display-variables:
-    name:  ${{vars.ENVIRONMENT_VAR}}
+    name: ${{ vars.ENVIRONMENT_VAR }}
     runs-on: ubuntu-latest
+    environment: test
+    env:
+      REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
+      ORGANIZATION_VAR: ${{ vars.ORGANIZATION_VAR }}
+      ENVIRONMENT_VAR: ${{ vars.ENVIRONMENT_VAR }}
+      JOB_VAR: ${{ vars.JOB_VAR }}
     steps:
     - name: Use variables 1
       Env:
@@ -20,11 +26,6 @@ jobs:
         echo "Powinna być zmienna w scopie workflow:$WORKFLOW_VAR"
         echo "Powinna być zmienna w scopie joba:$JOB_VAR"
         echo "Powinna być zmienna w scopie stepu:$STEP_VAR"
-    env:
-      REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
-      ORGANIZATION_VAR: ${{ vars.ORGANIZATION_VAR }}
-      ENVIRONMENT_VAR: ${{ vars.ENVIRONMENT_VAR }}
-      JOB_VAR: ${{ vars.JOB_VAR }}
     
     - name: Use variables 1
       run: |
