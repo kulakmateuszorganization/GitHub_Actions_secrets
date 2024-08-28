@@ -56,7 +56,6 @@ jobs:
         run: |
           value=`cat text.txt`
           echo $(expr $value \* 9)
-    name: NAZWA
     uses: actions/download-artifact@v4
     with:
       name: artefakt1
