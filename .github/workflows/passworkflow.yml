@@ -14,10 +14,10 @@ jobs:
       - name: Set color
         id: color-selector
         run: echo "COLOR=red" >> "$GITHUB_OUTPUT"
+        outputs:
+          COLOR: ${{ steps.color-selector.outputs.COLOR }}
       - name: Get color
-        run: echo "The selected color is $COLOR"
-    outputs:
-      COLOR: ${{ steps.color-selector.outputs.COLOR }}
+        run: echo "The selected color is ${{steps.color-selector.outputs.COLOR}}"
         
   producer:
     needs: pass_in_one_job
