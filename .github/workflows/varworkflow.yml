@@ -16,7 +16,7 @@ jobs:
       JOB_VAR: ${{ vars.JOB_VAR }}
     steps:
     - name: Use variables 1
-      Env:
+      env:
         STEP_VAR: "Step variable"
       run: |
         echo "Repository variable : $REPOSITORY_VAR"
