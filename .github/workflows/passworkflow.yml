@@ -17,7 +17,7 @@ jobs:
       - name: Get color
         run: echo "The selected color is $COLOR"
     outputs:
-      color: ${{ steps.color-selector.outputs.COLOR }}
+      COLOR: ${{ steps.color-selector.outputs.COLOR }}
         
   producer:
     needs: pass_in_one_job
