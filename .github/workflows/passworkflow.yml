@@ -20,7 +20,7 @@ jobs:
       color: ${{ steps.color-selector.outputs.COLOR }}
         
   producer:
-    needs: color-selector
+    needs: pass_in_one_job
     runs-on: ubuntu-latest
     steps:
       - name: Make a sentence
