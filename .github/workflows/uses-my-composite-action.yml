@@ -7,9 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: foo
-        uses: OWNER/REPONAME/ACTION_FOLDER@BRANCH_NAME #⬅ Zmienić 
+        uses: OWNER/REPONAME/ACTION_FOLDER@main #⬅ Zmienić 
         with:
-          who-to-greet: <WPISZ_SWOJE_IMIĘ> #⬅ Uwaga
+          who-to-greet: Mateusz #⬅ Uwaga
       - run: echo random-number "$RANDOM_NUMBER"
         shell: bash
         env:
