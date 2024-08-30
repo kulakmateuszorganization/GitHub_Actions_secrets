@@ -15,10 +15,15 @@ on:
       tags:
         required: false
         type: string
+      matrix:
+        required: true
+        type: string
 
 jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ inputs.matrix }}
     steps:
       - name: Log the inputs
         run: |
