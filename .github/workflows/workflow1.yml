@@ -23,7 +23,7 @@ jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     strategy:
-      matrix: ${{ inputs.matrix }}
+      matrix: ${{ fromJson(inputs.matrix) }}
     steps:
       - name: Log the inputs
         run: |
