@@ -17,5 +17,5 @@ jobs:
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
-      name: workspace_artifacts
-      path: ${{ github.workspace }} #⬅ Ten katalog jest mapowany pod obraz
+        name: workspace_artifacts
+        path: ${{ github.workspace }} #⬅ Ten katalog jest mapowany pod obraz
