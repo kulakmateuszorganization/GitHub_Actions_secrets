@@ -20,10 +20,12 @@ jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
+      - name: Log the inputs
         run: |
           echo "Log level: $LEVEL"
           echo "Tags: $TAGS"
           echo "Environment: $ENVIRONMENT"
+      - name: Set environment variables
         env:
           LEVEL: ${{ inputs.logLevel }}
           TAGS: ${{ inputs.tags }}
