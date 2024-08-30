@@ -1,36 +1,36 @@
-name: dispatch
-on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-          - 'warning'
-          - 'info'
-          - 'debug'
-      environment:
-        type: environment
-      tags:
-        required: false
-        type: string
-      matrix:
-        required: true
-        type: string
+# name: dispatch
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       logLevel:
+#         required: true
+#         default: 'warning'
+#         type: choice
+#         options:
+#           - 'warning'
+#           - 'info'
+#           - 'debug'
+#       environment:
+#         type: environment
+#       tags:
+#         required: false
+#         type: string
+#       matrix:
+#         required: true
+#         type: string
 
-jobs:
-  log-the-inputs:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix: ${{ fromJson(inputs.matrix) }}
-    steps:
-      - name: Log the inputs
-        run: |
-          echo "Log level: $LEVEL"
-          echo "Tags: $TAGS"
-          echo "Environment: $ENVIRONMENT"
-        env:
-          LEVEL: ${{ inputs.logLevel }}
-          TAGS: ${{ inputs.tags }}
-          ENVIRONMENT: ${{ inputs.environment }}
+# jobs:
+#   log-the-inputs:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix: ${{ fromJson(inputs.matrix) }}
+#     steps:
+#       - name: Log the inputs
+#         run: |
+#           echo "Log level: $LEVEL"
+#           echo "Tags: $TAGS"
+#           echo "Environment: $ENVIRONMENT"
+#         env:
+#           LEVEL: ${{ inputs.logLevel }}
+#           TAGS: ${{ inputs.tags }}
+#           ENVIRONMENT: ${{ inputs.environment }}
