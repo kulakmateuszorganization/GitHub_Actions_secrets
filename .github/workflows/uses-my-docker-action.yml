@@ -9,7 +9,7 @@ jobs:
     id: hello
     uses: ./hello-world-docker-action
     with:
-    who-to-greet: "Mateusz"
+      who-to-greet: "Mateusz"
   
     - name: Get the output time
     run: echo "The time was ${{ steps.hello.outputs.time }}"
